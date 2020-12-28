@@ -1,0 +1,26 @@
+{
+  "name": "wilmion-page",
+  "version": "1.0.0",
+  "description": "este es mi pagina correspondiente a mi marca personal",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wilmion/wilmionDev.git"
+  },
+  "keywords": [
+    "wilmion",
+    "web",
+    "developer",
+    "front-end",
+    "back-end"
+  ],
+  "author": "Wilbert Navarrete",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wilmion/wilmionDev/issues"
+  },
+  "homepage": "https://github.com/wilmion/wilmionDev#readme"
+}
