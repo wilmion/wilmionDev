@@ -1,0 +1,1 @@
+(()=>{let e=document.querySelector(".header__paragraph"),r=1;const a=()=>{setTimeout((()=>{4===r&&(r=0),function(r=new Number){let a="";switch(r){case 1:a=".";break;case 2:a="..";break;case 3:a="...";break;default:a=""}e.innerHTML=`In Progress ${a}`}(r),r++,a()}),250)};a()})();
