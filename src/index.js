@@ -1,3 +1,4 @@
+import './styles/index.css';
 let parrafo = document.querySelector('.header__paragraph');
 let points_count = 1;
 
