@@ -1,14 +1,6 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-html{
-    font-size: 62.5%;
-    font-family: monospace;
-}
+@import "../../node_modules/tailwindcss/dist/base.css";
 /*--Header--*/
-.header__paragraph{
-    font-size: 1.8rem;
-    padding: 10px;
+.header__paragraph {
+  font-size: 1.8rem;
+  padding: 10px;
 }
