@@ -9,6 +9,7 @@ module.exports = {
         path: path.resolve(__dirname , 'dist/'),
         filename: 'js/[name].js'
     },
+    resolve: {extensions:['.ts' , '.js']},
     module: {
         rules: [
             {
@@ -17,19 +18,12 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                test: /\.css$/,
-                use: [
-                    MiniCSSExtractPlugin.loader,
-                    'css-loader',
-                    'postcss-loader'
-                ]
-            },
-            {
                 test: /\.scss$/,
                 use: [
                     MiniCSSExtractPlugin.loader,
                     'css-loader',
-                    'sass-loader'
+                    'sass-loader',
+                    'postcss-loader'
                 ]
             }
         ]

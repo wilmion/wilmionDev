@@ -1,1 +1,4 @@
-import './styles/index.css';
+import "./components/Skill";
+import "./components/Project";
+
+import './styles/sass/index.scss';
