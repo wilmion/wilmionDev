@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.header {
+  &-contain {
+    @apply bg-primary w-full py-2 md:py-4 md:px-1;
+    &-nav {
+      @apply hidden md:block;
+      &-list {
+        @apply flex justify-end;
+        &__item {
+          @apply block text-gray-800  text-base mx-4 cursor-pointer;
+        }
+      }
+    }
+    &-menu {
+      @apply ml-auto w-full flex justify-end md:hidden;
+      &__icon {
+        @apply text-gray-800 text-xl mr-4 cursor-pointer;
+      }
+    }
+  }
+}

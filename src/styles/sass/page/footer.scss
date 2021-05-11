@@ -1,0 +1,12 @@
+.footer {
+  @apply bg-terciary p-2 mt-auto;
+  &-nav {
+    @apply flex flex-col md:flex-row md:justify-center md:my-2;
+    &__item {
+      @apply text-gray-100 my-2 font-semibold text-sm md:my-0 md:mx-3 text-center uppercase cursor-pointer;
+    }
+  }
+  &__message {
+    @apply text-gray-100 my-1 mt-2 font-mono text-xs text-center p-1;
+  }
+}
