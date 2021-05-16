@@ -7,14 +7,22 @@ class Project extends HTMLElement {
   repo: string;
   deploy: string;
   ancho: number;
+
+  cssId: string;
   constructor() {
     super();
   }
   getTemplate(): HTMLTemplateElement {
     const template = document.createElement("template");
 
+    this.cssId = this.rotulo.toLowerCase().replace(/ /g, "");
+
     template.innerHTML = `
-            <section id="project" class="background-project w-full bg-cover p-2 bg-no-repeat bg-center">
+            <section id="project" cssid="${
+              this.cssId
+            }" class="background-project-${
+      this.cssId
+    } w-full bg-cover p-2 bg-no-repeat bg-center">
                 <div class="opacity-0">
                     <h2 class="text-center text-gray-300 uppercase text-base font-bold mb-4">${
                       this.rotulo
@@ -40,11 +48,11 @@ class Project extends HTMLElement {
   }
   getStyle(): string {
     return `<style>
-            .background-project {
+            .background-project-${this.cssId} {
                 background-image: url("${this.img}");
                 min-height: ${(this.ancho * 9) / 16}px;
             }
-            .background-project--click {
+            .background-project--click-${this.cssId} {
                 background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
                     url("${this.img}");
                 min-height: ${(this.ancho * 9) / 16}px;
@@ -56,16 +64,15 @@ class Project extends HTMLElement {
   }
   handleClick(e: any): void {
     selectElement(e.target, "project", (element) => {
+      const cssId: string = element.getAttribute("cssid");
       if (
         element.className ===
-        "background-project w-full bg-cover p-2 bg-no-repeat bg-center"
+        `background-project-${cssId} w-full bg-cover p-2 bg-no-repeat bg-center`
       ) {
-        element.className =
-          "background-project--click w-full bg-cover p-2 bg-no-repeat bg-center";
+        element.className = `background-project--click-${cssId} w-full bg-cover p-2 bg-no-repeat bg-center`;
         element.children[0].className = "opacity-100";
       } else {
-        element.className =
-          "background-project w-full bg-cover p-2 bg-no-repeat bg-center";
+        element.className = `background-project-${cssId} w-full bg-cover p-2 bg-no-repeat bg-center`;
         element.children[0].className = "opacity-0 disable";
       }
     });

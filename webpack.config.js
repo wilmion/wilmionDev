@@ -7,7 +7,7 @@ module.exports = {
     entry : path.resolve(__dirname , 'src/index.ts'),
     output : {
         path: path.resolve(__dirname , 'dist/'),
-        filename: 'js/[name].js'
+        filename: 'js/[fullhash].js'
     },
     resolve: {extensions:['.ts' , '.js']},
     module: {
@@ -25,6 +25,16 @@ module.exports = {
                     'sass-loader',
                     'postcss-loader'
                 ]
+            },
+            {
+                test:/\.(jpg|png)$/,
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: '[hash].[ext]',
+                        outputPath: "assets/images/"
+                    }
+                }
             }
         ]
     },
