@@ -22,7 +22,7 @@ class Project extends HTMLElement {
               this.cssId
             }" class="background-project-${
       this.cssId
-    } w-full bg-cover p-2 bg-no-repeat bg-center">
+    } w-full bg-cover p-2 bg-no-repeat bg-center cursor-pointer">
                 <div class="opacity-0">
                     <h2 class="text-center text-gray-300 uppercase text-base font-bold mb-4">${
                       this.rotulo
@@ -67,12 +67,12 @@ class Project extends HTMLElement {
       const cssId: string = element.getAttribute("cssid");
       if (
         element.className ===
-        `background-project-${cssId} w-full bg-cover p-2 bg-no-repeat bg-center`
+        `background-project-${cssId} w-full bg-cover p-2 bg-no-repeat bg-center cursor-pointer`
       ) {
-        element.className = `background-project--click-${cssId} w-full bg-cover p-2 bg-no-repeat bg-center`;
+        element.className = `background-project--click-${cssId} w-full bg-cover p-2 bg-no-repeat bg-center cursor-pointer`;
         element.children[0].className = "opacity-100";
       } else {
-        element.className = `background-project-${cssId} w-full bg-cover p-2 bg-no-repeat bg-center`;
+        element.className = `background-project-${cssId} w-full bg-cover p-2 bg-no-repeat bg-center cursor-pointer`;
         element.children[0].className = "opacity-0 disable";
       }
     });

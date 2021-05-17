@@ -13,23 +13,25 @@ class Skill extends HTMLElement {
   getTemplate(): HTMLTemplateElement {
     const template: HTMLTemplateElement = document.createElement("template");
 
-    this.cssId = this.nameskill.toLowerCase();
+    this.cssId = this.nameskill.toLowerCase() + this.size;
+
+    console.log(Number(this.size));
 
     template.innerHTML = `
-            <div id="skill-icon" cssid="${
-              this.cssId + this.size
-            }" class="containt target-${
-      this.cssId + this.size
+      <div id="skill-icon" cssid="${this.cssId}" class="containt target-${
+      this.cssId
     } bg-image p-2 bg-cover bg-no-repeat bg-center">
-                <div class="opacity-0">
-                    <h2 class="text-gray-300 text-center pb-4 uppercase font-bold text-xs" >${
-                      this.cssId
-                    }</h2>
-                    <p class="text-gray-300 text-center my-2 text-xs">${
-                      this.desc
-                    }</p>
-                </div>
-            </div>
+        <div class="opacity-0">
+          <h2 class="${
+            Number(this.size) < 100 && "hidden"
+          } text-gray-300 text-center pb-4 uppercase font-bold text-xs" >${
+      this.nameskill
+    }</h2>
+          <p class="${
+            Number(this.size) < 100 && "hidden"
+          } text-gray-300 text-center my-2 text-xs">${this.desc}</p>
+        </div>
+      </div>
             ${this.getStyles()}
         `;
     return template;
@@ -40,12 +42,12 @@ class Skill extends HTMLElement {
             #skill-icon,div,h2,p {
                 transition: 1s;
             }
-            .target-${this.cssId}${this.size} {
+            .target-${this.cssId} {
               background-image: url("${this.img}");
               width: ${this.size}px;
               height: ${this.size}px;
             } 
-            .target--details-${this.cssId}${this.size} {
+            .target--details-${this.cssId} {
               background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
                 url("${this.img}");
               width: ${this.size}px;
