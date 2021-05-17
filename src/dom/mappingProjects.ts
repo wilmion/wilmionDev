@@ -1,6 +1,7 @@
 import { ProjectClass } from "../utils/project-class";
 import { createSkill } from "../utils/dom/createSkill";
 import { SkillsClass } from "../utils/skills-icons";
+import { lazyLoading } from "../utils/lazy-loading";
 
 const projectClass = new ProjectClass();
 const skillClass = new SkillsClass();
@@ -16,15 +17,13 @@ const createProject = (
   const contain = document.createElement("article");
   contain.className = "exp";
 
-  const project: HTMLElement = document.createElement("my-project");
-
-  //atrr
-
-  project.setAttribute("img", image);
-  project.setAttribute("rotulo", title);
-  project.setAttribute("desc", desc);
-  project.setAttribute("repo", gitHub);
-  project.setAttribute("deploy", deploy);
+  const projectCotainObserver: HTMLElement = document.createElement("div");
+  projectCotainObserver.className = "w-60 h-32";
+  projectCotainObserver.dataset.img = image;
+  projectCotainObserver.dataset.rotulo = title;
+  projectCotainObserver.dataset.desc = desc;
+  projectCotainObserver.dataset.repo = gitHub;
+  projectCotainObserver.dataset.deploy = deploy;
 
   const subtitle: HTMLHeadingElement = document.createElement("h3");
   subtitle.textContent = "Tecnologías usadas: ";
@@ -38,10 +37,26 @@ const createProject = (
 
   skillsContain.append(...skills);
 
-  contain.appendChild(project);
+  contain.appendChild(projectCotainObserver);
   contain.appendChild(subtitle);
   contain.appendChild(line);
   contain.appendChild(skillsContain);
+
+  lazyLoading.observe(projectCotainObserver, (element) => {
+    element.className = "";
+
+    const project: HTMLElement = document.createElement("my-project");
+
+    //atrr
+
+    project.setAttribute("img", element.dataset.img);
+    project.setAttribute("rotulo", element.dataset.rotulo);
+    project.setAttribute("desc", element.dataset.desc);
+    project.setAttribute("repo", element.dataset.repo);
+    project.setAttribute("deploy", element.dataset.deploy);
+
+    element.appendChild(project);
+  });
 
   return contain;
 };

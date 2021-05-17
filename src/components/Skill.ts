@@ -15,8 +15,6 @@ class Skill extends HTMLElement {
 
     this.cssId = this.nameskill.toLowerCase() + this.size;
 
-    console.log(Number(this.size));
-
     template.innerHTML = `
       <div id="skill-icon" cssid="${this.cssId}" class="containt target-${
       this.cssId
