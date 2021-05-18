@@ -21,10 +21,23 @@
     <meta property="og:site_name" content="Wilmion" />
     <title>Wilmion</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
-    <link rel="shortcut icon" href="https://download.seaicons.com/icons/blackvariant/button-ui-system-folders-drives/1024/Developer-icon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="http://cleannet.com.uy/images/ico.trabajo.png" type="image/x-icon">
 </head>
 <body class="min-h-screen flex flex-col">
     <header class="header">
+        <div id="navigation-movil" class="bg-primary w-full h-screen fixed md:hidden">
+            <div class="flex flex-row-reverse justify-items-end items-center">
+                <i id="navigation-movil-close" class="fas fa-times-circle text-gray-900 hover:text-gray-600 text-xl m-2 cursor-pointer"></i>
+            </div>
+            <nav class="m-6">
+                <ul>
+                    <li class="my-3 font-bold uppercase"><a id="navigation-movil__item" href="#about">About</a></li>
+                    <li class="my-3 font-bold uppercase"><a id="navigation-movil__item" href="#skills">Skills</a></li>
+                    <li class="my-3 font-bold uppercase"><a id="navigation-movil__item" href="#exp">Experiencie</a></li>
+                    <li class="my-3 font-bold uppercase"><a id="navigation-movil__item" href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
         <div class="header-contain">
             <nav class="header-contain-nav">
                 <ul class="header-contain-nav-list">
@@ -35,7 +48,7 @@
                 </ul>
             </nav>
             <div class="header-contain-menu">
-                <i class="fas fa-bars header-contain-menu__icon"></i>
+                <i id="menu-open" class="fas fa-bars header-contain-menu__icon"></i>
             </div>
         </div>
     </header>
