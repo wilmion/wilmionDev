@@ -31,10 +31,10 @@ class Project extends HTMLElement {
                       this.desc
                     }</p>
                     <div class="flex flex-row justify-around my-5">
-                        <a href="${
+                        <a rel="noopener" href="${
                           this.repo
                         }" target="_blank"><i class="fab fa-github-square text-2xl text-gray-300 cursor-pointer"></i></a>
-                        <a href="${
+                        <a rel="noopener" href="${
                           this.deploy
                         }" target="_blank"><i class="fas fa-eye text-2xl text-gray-300 cursor-pointer"></i></a>
                     </div>
