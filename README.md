@@ -1,12 +1,13 @@
 # My personal Page
 
-`status = Terminado`
+`status = 'Terminado'`
 
 #### Ussage:
 
 - Webpack
 - Babel
 - Typescript
+- TailwindCSS
 
 #### Methodology
 
