@@ -1,0 +1,35 @@
+.modal {
+  background-color: rgba($color: #000000, $alpha: 0.6);
+  @apply w-full h-screen fixed top-0 z-10;
+  &-contain {
+    @apply bg-gray-50 w-11/12 mx-auto my-5 pb-2 xl:w-1/2;
+    &__close {
+      @apply flex justify-end w-full;
+      &--letter {
+        transition: 1s;
+        @apply text-base text-gray-700 py-1 px-3 cursor-pointer hover:bg-red-500;
+      }
+    }
+    &__title {
+      @apply text-center text-gray-800 uppercase text-base font-bold mb-5 mt-2 2xl:text-lg;
+    }
+    &__desc {
+      @apply text-center text-gray-700 w-11/12 mx-auto text-sm my-1 tracking-wider 2xl:text-base;
+    }
+    &-tecnologies {
+      &__title {
+        @apply text-center text-gray-800 text-base font-bold my-3 w-11/12 mx-auto 2xl:text-lg;
+      }
+      &__contain {
+        @apply my-3 flex flex-row justify-center flex-wrap;
+      }
+    }
+    &-buttons {
+      @apply flex flex-row justify-end items-center flex-wrap my-3;
+      &__button {
+        transition: 1s;
+        @apply flex items-center cursor-pointer mx-3 justify-center w-2/5 xl:w-1/4 py-2 text-center text-gray-800 rounded border border-gray-900 text-sm font-bold 2xl:text-base;
+      }
+    }
+  }
+}
