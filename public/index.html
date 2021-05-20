@@ -25,13 +25,13 @@
 </head>
 <body class="min-h-screen flex flex-col">
     <header class="header">
-        <div id="navigation-movil" class="bg-primary w-full h-screen fixed md:hidden">
+        <div id="navigation-movil" class="bg-primary w-full h-screen fixed z-20 md:hidden" style="transform: translateX(-100%);">
             <div class="flex flex-row-reverse justify-items-end items-center">
                 <i id="navigation-movil-close" class="fas fa-times-circle text-gray-900 hover:text-gray-600 text-xl m-2 cursor-pointer"></i>
             </div>
             <nav class="m-6">
                 <ul>
-                    <li class="my-3 font-bold uppercase"><a id="navigation-movil__item" href="#about">About</a></li>
+                    <li class="my-3 font-bold uppercase"><a id="navigation-movil__item" href="#about">Sobre mí</a></li>
                     <li class="my-3 font-bold uppercase"><a id="navigation-movil__item" href="#skills">Skills</a></li>
                     <li class="my-3 font-bold uppercase"><a id="navigation-movil__item" href="#exp">Experiencie</a></li>
                     <li class="my-3 font-bold uppercase"><a id="navigation-movil__item" href="#contact">Contact</a></li>
@@ -41,10 +41,10 @@
         <div class="header-contain">
             <nav class="header-contain-nav">
                 <ul class="header-contain-nav-list">
-                    <li class="header-contain-nav-list__item"><a href="#about">About</a></li>
+                    <li class="header-contain-nav-list__item"><a href="#about">Sobre mí</a></li>
                     <li class="header-contain-nav-list__item"><a href="#skills">Skills</a></li>
-                    <li class="header-contain-nav-list__item"><a href="#exp">Experiencie</a></li>
-                    <li class="header-contain-nav-list__item"><a href="#contact">Contact</a></li>
+                    <li class="header-contain-nav-list__item"><a href="#exp">Experiencia</a></li>
+                    <li class="header-contain-nav-list__item"><a href="#contact">Contacto</a></li>
                 </ul>
             </nav>
             <div class="header-contain-menu">
@@ -94,14 +94,18 @@
             <picture class="introduction-img">
                 <img id="my_photo" alt="picture the wilmion">
             </picture>
-            <h3 class="introduction__title">¡Hola! Soy Wilmion <br>Fontend Developer</h3>
+            <div class="introduction-contain">
+                <h1 class="introduction-contain__title">¡Hola! Soy Wilmion<span>&#160;</span></h1>
+                <h2 class="introduction-contain__title">Frontend Developer<span>&#160;</span></h2>
+            </div>
+            
         </section>
         <section id="about" class="sections">
-            <h2 class="sections__column">ABOUT</h2>
+            <h2 class="sections__column">SOBRE MÍ</h2>
             <article name="description" class="about">
                 <p class="about__desc">¡Hola! Soy Wilbert , Front-End developer y estudiante de Platzi. <br> 
                     Soy un apasionado en el código en javascript , de la cual me encanta la lógica. Me gusta crear páginas web constantemente utilizando y aplicando mis conocimientos. <br>
-                    Me considero una persona comprometido con lo que hago , también , soy una persona autodidacta actualizandome día a día con las últimas tecnologías. <br> 
+                    Soy una persona autodidacta actualizandome día a día con las últimas tecnologías. Además , todo lo que he aprendido siempre esta bajo mi propia cuenta e ínteres.<br> 
                     A lo largo de mi aprendizaje desarrolle múltiples proyectos respetando los principios de  usabilidad, reutilización, buenas prácticas y creatividad. En conclusión, programar es algo que amo!
                 </p>
                 
@@ -142,10 +146,10 @@
     </main>
     <footer class="footer">
         <nav class="footer-nav">
-            <a href="#about" class="footer-nav__item">About</a>
+            <a href="#about" class="footer-nav__item">Sobre mí</a>
             <a href="#skills" class="footer-nav__item">Skills</a>
-            <a href="#exp" class="footer-nav__item">Experiencie</a>
-            <a href="#contact" class="footer-nav__item">Contact</a>
+            <a href="#exp" class="footer-nav__item">Experiencia</a>
+            <a href="#contact" class="footer-nav__item">Contacto</a>
         </nav>
         <p class="footer__message">Nunca pares de aprender 💚💚💚</p>
     </footer>
