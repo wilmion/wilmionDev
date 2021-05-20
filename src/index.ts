@@ -10,5 +10,6 @@ import "./styles/sass/page/footer.scss";
 import "./dom/Introduction";
 import "./dom/mappingSkills";
 import "./dom/mappingProjects";
-
 import "./layout/toogleHeaderMobile";
+import "./layout/toogleModal";
+import "./dom/events.ts";

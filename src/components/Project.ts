@@ -1,84 +1,34 @@
-import { selectElement } from "../utils/selectElement";
-
 class Project extends HTMLElement {
   img: string;
   rotulo: string;
   desc: string;
   repo: string;
   deploy: string;
-  ancho: number;
-
-  cssId: string;
   constructor() {
     super();
   }
   getTemplate(): HTMLTemplateElement {
     const template = document.createElement("template");
 
-    this.cssId = this.rotulo.toLowerCase().replace(/ /g, "");
-
     template.innerHTML = `
-            <section id="project" cssid="${
-              this.cssId
-            }" class="background-project-${
-      this.cssId
-    } w-full bg-cover p-2 bg-no-repeat bg-center cursor-pointer">
-                <div class="opacity-0">
-                    <h2 class="text-center text-gray-300 uppercase text-base font-bold mb-4">${
-                      this.rotulo
-                    }</h2>
-                    <p class="text-center text-gray-300 text-sm my-1 tracking-wider" >${
-                      this.desc
-                    }</p>
-                    <div class="flex flex-row justify-around my-5">
-                        <a rel="noopener" href="${
-                          this.repo
-                        }" target="_blank"><i class="fab fa-github-square text-2xl text-gray-300 cursor-pointer"></i></a>
-                        <a rel="noopener" href="${
-                          this.deploy
-                        }" target="_blank"><i class="fas fa-eye text-2xl text-gray-300 cursor-pointer"></i></a>
-                    </div>
-                </div>
-                
-            </section>
-            ${this.getStyle()}
-        `;
+      <section class="p-2 w-full">
+        <picture >
+          <img class="w-full h-auto border border-gray-600 rounded-lg" src="${this.img}" alt="${this.rotulo}" />
+        </picture>
+        <button  
+          id="project" 
+          class="block mx-auto rounded-sm my-4 w-3/4 py-3 px-5 text-sm font-bold border border-gray-600 text-gray-600" 
+          data-rotulo="${this.rotulo}"
+          data-desc="${this.desc}"
+          data-repo="${this.repo}"
+          data-deploy="${this.deploy}"
+        >Mas información</button>
+      </section>`;
 
     return template;
   }
-  getStyle(): string {
-    return `<style>
-            .background-project-${this.cssId} {
-                background-image: url("${this.img}");
-                min-height: ${(this.ancho * 9) / 16}px;
-            }
-            .background-project--click-${this.cssId} {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                    url("${this.img}");
-                min-height: ${(this.ancho * 9) / 16}px;
-            }
-            section , h2 , p , div , i {
-                transition: 1s;
-            }
-        </style>`;
-  }
-  handleClick(e: any): void {
-    selectElement(e.target, "project", (element) => {
-      const cssId: string = element.getAttribute("cssid");
-      if (
-        element.className ===
-        `background-project-${cssId} w-full bg-cover p-2 bg-no-repeat bg-center cursor-pointer`
-      ) {
-        element.className = `background-project--click-${cssId} w-full bg-cover p-2 bg-no-repeat bg-center cursor-pointer`;
-        element.children[0].className = "opacity-100";
-      } else {
-        element.className = `background-project-${cssId} w-full bg-cover p-2 bg-no-repeat bg-center cursor-pointer`;
-        element.children[0].className = "opacity-0 disable";
-      }
-    });
-  }
   static get observedAttributes(): string[] {
-    return ["img", "rotulo", "desc", "repo", "deploy", "ancho"];
+    return ["img", "rotulo", "desc", "repo", "deploy", "tech"];
   }
   attributeChangedCallback(attr, oldVal, newVal: string) {
     switch (attr) {
@@ -97,14 +47,10 @@ class Project extends HTMLElement {
       case "deploy":
         this.deploy = newVal;
         break;
-      case "ancho":
-        this.ancho = +newVal;
-        break;
     }
   }
   connectedCallback(): void {
     this.appendChild(this.getTemplate().content.cloneNode(true));
-    this.querySelector(`#project`).addEventListener("click", this.handleClick);
   }
 }
 
