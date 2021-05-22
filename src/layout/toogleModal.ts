@@ -10,7 +10,7 @@ function changeProp(
 ): void {
   const element: HTMLElement = modal.querySelector(selector);
   if (value) {
-    element.textContent = value;
+    element.innerHTML = value;
   }
   if (prop) {
     element[prop.name] = prop.value;

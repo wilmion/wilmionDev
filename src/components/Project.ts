@@ -22,7 +22,7 @@ class Project extends HTMLElement {
           data-desc="${this.desc}"
           data-repo="${this.repo}"
           data-deploy="${this.deploy}"
-        >Mas información</button>
+        >Más información</button>
       </section>`;
 
     return template;
