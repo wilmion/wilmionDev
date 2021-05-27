@@ -1,4 +1,4 @@
-import MyPhoto from "../static/photo/Perfil_Photo.jpg";
+import MyPhoto from "../static/photo/CV.jpg";
 import { lazyLoading } from "../utils/lazy-loading";
 
 const imagePhoto = document.getElementById("my_photo");
