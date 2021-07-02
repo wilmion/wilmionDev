@@ -24,13 +24,11 @@ window.addEventListener("click", (event) => {
     case "project":
       const title = element.dataset.rotulo;
       const desc = element.dataset.desc;
-      const github = element.dataset.repo;
-      const deploy = element.dataset.deploy;
 
       const projectClass = new ProjectClass();
       const skillClass = new SkillsClass();
 
-      const { tecnologies } = projectClass.getbyName(title);
+      const { tecnologies, gitHub, deploy } = projectClass.getbyName(title);
 
       let skills: HTMLElement[] = [];
 
@@ -39,7 +37,7 @@ window.addEventListener("click", (event) => {
         skills.push(createSkill(logo, title, desc, "64"));
       });
 
-      setInformationOnModal(title, desc, github, deploy, skills);
+      setInformationOnModal(title, desc, gitHub, deploy, skills);
 
       break;
   }

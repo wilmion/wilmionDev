@@ -14,6 +14,10 @@ import stylusLogo from "../static/icon/stylus-logo.png";
 import tailwindLogo from "../static/icon/tailwind-logo.png";
 import tsLogo from "../static/icon/ts-logo.png";
 import webpackLogo from "../static/icon/webpack-logo.png";
+import ngrx_icon from '../static/icon/ngrx-icon.png';
+import NestLogo from '../static/icon/Nestjs-icon.png';
+import MongoDBLogo from '../static/icon/mongodb-icon.png';
+import MongooseLogo from '../static/icon/mongoose-icon.png'; 
 
 export class SkillsClass {
   logos: string[];
@@ -37,6 +41,10 @@ export class SkillsClass {
       tailwindLogo,
       tsLogo,
       webpackLogo,
+      NestLogo,
+      MongoDBLogo,
+      MongooseLogo,
+      ngrx_icon
     ];
     this.title = [
       "Angular",
@@ -55,6 +63,10 @@ export class SkillsClass {
       "TailwindCSS",
       "Typescript",
       "Webpack",
+      "NestJS",
+      "MongoDB",
+      "Mongoose",
+      "NGRX"
     ];
     this.description = [
       "Framework de Javascript",
@@ -73,6 +85,10 @@ export class SkillsClass {
       "Framework de estilos de CSS",
       "Lenguaje altamente tipado de JS",
       "Compilador de Javascript",
+      "Framework backend",
+      "Base de datos no relacional en la nube",
+      "Creador de Schemas",
+      "Manejador de estado en Angular"
     ];
   }
   getSkill(index: number): {

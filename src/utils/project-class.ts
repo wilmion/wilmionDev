@@ -1,5 +1,5 @@
 import FoxbelMusic from "../static/portairs/foxbel-music-portairt.jpg";
-import MilkyMakers from "../static/portairs/milkymakers-portairt.jpg";
+import KuksFresh from '../static/portairs/kuks-fresh portrait.png';
 import RentCarsAPI from "../static/portairs/rent-cars-API-portairt.jpg";
 import RentCars from "../static/portairs/rent-cars-portairt.jpg";
 
@@ -7,29 +7,26 @@ export class ProjectClass {
   images: string[];
   title: string[];
   desc: string[];
-  gitHubLink: string[];
-  deployLink: string[];
+  gitHubLink: Array<string | string[]>;
+  deployLink: Array<string | string[]>;
   tecnologies: string[][];
   constructor() {
-    this.images = [FoxbelMusic, MilkyMakers, RentCars, RentCarsAPI];
-    this.title = ["Foxbel Music", "MilkyMakers", "Rent Cars", "Rent Cars API"];
+    this.images = [FoxbelMusic, KuksFresh, RentCars, RentCarsAPI];
+    this.title = ["Foxbel Music", "Kuks Fresh", "Rent Cars"];
     this.desc = [
       "Proyecto de una prueba técnica , app de música parecida a Spotify.",
-      "Proyecto personal de una E-Comerce de distintas galletas hechas con leche. <br> Esta página es solo para mobile.",
-      "Proyecto personal de una E-Comerce. <br> Conciste en rentar automoviles por día.",
-      "Proyecto personal de una E-Comerce. <br> Esta misma , es el backend de una app para rentar automoviles por día.",
+      "Proyecto personal de una E-Comerce de venta de comida a domicilio.",
+      "Proyecto personal de una E-Comerce. <br> Conciste en rentar automoviles por día."
     ];
     this.deployLink = [
       "https://foxbel-mus.netlify.app/",
-      "https://milky-makers.web.app/",
-      "https://rent-cars.netlify.app/",
-      "https://rent-carts.herokuapp.com/api/",
+      ["https://kuks-fresh.netlify.app/", "https://kuks-fresh.herokuapp.com/api/"],
+      ["https://rent-cars.netlify.app/", "https://rent-carts.herokuapp.com/api/"],
     ];
     this.gitHubLink = [
       "https://github.com/wilmion/Foxbel-Music",
-      "https://github.com/wilmion/milkymakers",
-      "https://github.com/wilmion/rent-carts",
-      "https://github.com/wilmion/rentCardAPI",
+      ["https://github.com/wilmion/kuks-fresh", "https://github.com/wilmion/kuks-fresh-backend"],
+      ["https://github.com/wilmion/rent-carts", "https://github.com/wilmion/rentCardAPI"],
     ];
     this.tecnologies = [
       [
@@ -42,14 +39,16 @@ export class ProjectClass {
         "Babel",
       ],
       [
-        "React",
+        "Angular",
         "HTML5",
         "SASS",
         "Typescript",
-        "Redux",
+        "NGRX",
         "Ecmascript",
         "Webpack",
-        "Babel",
+        "NestJS",
+        "MongoDB",
+        "Mongoose",
       ],
       [
         "React",
@@ -60,8 +59,8 @@ export class ProjectClass {
         "Ecmascript",
         "Webpack",
         "Babel",
+        "NodeJS"
       ],
-      ["NodeJS"],
     ];
   }
   getByIndex(index: number) {

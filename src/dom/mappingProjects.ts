@@ -7,8 +7,8 @@ const createProject = (
   image: string,
   title: string,
   desc: string,
-  gitHub: string,
-  deploy: string
+  gitHub: string | string[],
+  deploy: string | string[]
 ): HTMLElement => {
   const contain = document.createElement("article");
   contain.className = "exp";
@@ -18,8 +18,7 @@ const createProject = (
   projectCotainObserver.dataset.img = image;
   projectCotainObserver.dataset.rotulo = title;
   projectCotainObserver.dataset.desc = desc;
-  projectCotainObserver.dataset.repo = gitHub;
-  projectCotainObserver.dataset.deploy = deploy;
+  
 
   contain.appendChild(projectCotainObserver);
 
@@ -33,8 +32,6 @@ const createProject = (
     project.setAttribute("img", element.dataset.img);
     project.setAttribute("rotulo", element.dataset.rotulo);
     project.setAttribute("desc", element.dataset.desc);
-    project.setAttribute("repo", element.dataset.repo);
-    project.setAttribute("deploy", element.dataset.deploy);
 
     element.appendChild(project);
   });

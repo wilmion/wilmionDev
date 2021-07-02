@@ -24,14 +24,17 @@
         @apply text-center text-gray-800 text-base font-bold my-3 w-11/12 mx-auto 2xl:text-lg;
       }
       &__contain {
-        @apply my-3 flex flex-row justify-center flex-wrap;
+        @apply my-3 flex flex-row justify-center flex-wrap overflow-scroll max-h-28;
+        &::-webkit-scrollbar {
+          @apply hidden;
+        }
       }
     }
     &-buttons {
       @apply flex flex-row justify-end items-center flex-wrap my-3;
       &__button {
         transition: 1s;
-        @apply flex items-center cursor-pointer mx-3 justify-center w-2/5 xl:w-1/4 py-2 text-center text-gray-800 rounded border border-gray-900 text-sm font-bold 2xl:text-base;
+        @apply flex items-center cursor-pointer mx-3 mb-3 justify-center w-2/5 xl:w-1/4 py-2 text-center text-gray-800 rounded border border-gray-900 text-sm font-bold 2xl:text-base;
       }
     }
   }

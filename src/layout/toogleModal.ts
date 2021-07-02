@@ -6,34 +6,43 @@ const modalBackground: HTMLElement = document.querySelector(".modal");
 function changeProp(
   selector: string,
   value: string | null,
-  prop?: { name: string; value: String }
+  prop?: string,
+  style?: string,
 ): void {
   const element: HTMLElement = modal.querySelector(selector);
-  if (value) {
+
+  if (prop) {
+    element[prop] = value;
+  } else if (style) {
+    element.style[style] = value;
+  } else if (value) {
     element.innerHTML = value;
   }
-  if (prop) {
-    element[prop.name] = prop.value;
-  }
+
 }
 
 export function setInformationOnModal(
   title: string,
   desc: string,
-  github: string,
-  deploy: string,
+  github: string | string[],
+  deploy: string | string[],
   skills: HTMLElement[]
 ): void {
   changeProp(".modal-contain__title", title);
   changeProp(".modal-contain__desc", desc);
-  changeProp("#modal__github", null, {
-    name: "href",
-    value: github,
-  });
-  changeProp("#modal__deploy", null, {
-    name: "href",
-    value: deploy,
-  });
+  if(Array.isArray(github) && Array.isArray(deploy)) {
+    for (let i = 0 ; i < 2; i++) {
+      changeProp(`#modal__github${i}`, github[i], "href");
+      changeProp(`#modal__github${i}`, 'flex', null, 'display' );
+      changeProp(`#modal__deploy${i}`, deploy[i], "href");
+      changeProp(`#modal__deploy${i}`, 'flex', null, 'display' );
+    }
+  } else {
+    changeProp("#modal__github0", github as string, 'href' );
+    changeProp(`#modal__github1`, 'none', null, 'display' );
+    changeProp("#modal__deploy0", deploy as string, 'href' );
+    changeProp(`#modal__deploy1`, 'none', null, 'display' );
+  }
 
   const skillsContain = document.getElementById(`${id_base}__tech-contain`);
   skillsContain.innerHTML = "";
